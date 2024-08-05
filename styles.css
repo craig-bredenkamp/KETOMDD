@@ -1,5 +1,6 @@
+/* Existing styles */
 body {
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -38,8 +39,10 @@ body {
     background-color: #000000; /* Primary color */
     transition: width 0.2s ease-in-out;
 }
+.hide-checklist #checklist {
+    display: none; /* Hide the checklist on the main page */
+}
 #checklist {
-    display: box; /* Hide the checklist */
     list-style-type: none; /* Remove bullet points */
     padding: 0; /* Remove default padding */
 }
