@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progress Bar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Your existing styles here */
+        /* Existing styles */
     </style>
 </head>
 <body>
     <div id="progress-container">
-        <progress id="progress-bar" value="0" max="100"></progress>
-        <button onclick="location.href='checklist.html'">Edit Checklist</button>
+        <div style="display: flex; align-items: center;">
+            <progress id="progress-bar" value="0" max="100" style="flex: 1;"></progress>
+            <a href="checklist.html" style="margin-left: 10px;">
+                <i class="fas fa-pencil-alt"></i>
+            </a>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
