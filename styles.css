@@ -49,3 +49,11 @@ body {
 #checklist li {
     margin: 10px 0; /* Optional: add some margin between items */
 }
+
+.pencil-icon {
+    color: #D3D3D3; /* This is a light grey color */
+}
+
+.pencil-icon:hover {
+    color: #808080; /* This is a darker grey for hover state */
+}
