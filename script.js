@@ -1,28 +1,8 @@
-function updateProgress() {
-    const checkboxStates = JSON.parse(localStorage.getItem('checkboxStates')) || [];
-    const total = checkboxStates.length;
-    const checked = checkboxStates.filter(state => state).length;
-    const progress = total > 0 ? (checked / total) * 100 : 0;
-
-    console.log(`Total checkboxes: ${total}, Checked: ${checked}, Progress: ${progress}`);
-
-    const progressBar = document.getElementById('progress-bar');
-    if (progressBar) {
-        if (isFinite(progress)) {
-            progressBar.value = progress;
-            console.log(`Progress bar updated to ${progress}`);
-        } else {
-            console.error('Calculated progress is not finite:', progress);
-        }
-    } else {
-        console.log('Progress bar not found');
-    }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
     
     if (document.getElementById('checklist')) {
+        console.log('Checklist page detected');
         loadCheckboxes();
         const checkboxes = document.querySelectorAll('#checklist input[type="checkbox"]');
         checkboxes.forEach((checkbox, index) => {
@@ -32,11 +12,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateProgress();
             });
         });
+    } else {
+        console.log('Main page detected');
     }
     
     updateProgress();
     console.log('Initial progress updated');
 });
+
+function updateProgress() {
+    const checkboxStates = JSON.parse(localStorage.getItem('checkboxStates')) || [];
+    const total = checkboxStates.length;
+    const checked = checkboxStates.filter(state => state).length;
+    const progress = total > 0 ? (checked / total) * 100 : 0;
+
+    console.log(`Updating progress: Total: ${total}, Checked: ${checked}, Progress: ${progress.toFixed(2)}%`);
+
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) {
+        progressBar.value = progress;
+        console.log(`Progress bar updated to ${progress.toFixed(2)}%`);
+    } else {
+        console.error('Progress bar element not found');
+    }
+}
 
 function saveCheckboxes() {
     const checkboxes = document.querySelectorAll('#checklist input[type="checkbox"]');
