@@ -18,12 +18,17 @@ function updateProgress() {
     const total = checkboxes.length;
     const checked = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
     const progress = total > 0 ? (checked / total) * 100 : 0;
+    
     console.log(`Total checkboxes: ${total}, Checked: ${checked}, Progress: ${progress}`);
 
     const progressBar = document.getElementById('progress-bar');
     if (progressBar) {
-        progressBar.value = progress;
-        console.log(`Progress bar updated to ${progress}`);
+        if (isFinite(progress)) {
+            progressBar.value = progress;
+            console.log(`Progress bar updated to ${progress}`);
+        } else {
+            console.error('Calculated progress is not finite:', progress);
+        }
     } else {
         console.log('Progress bar not found');
     }
