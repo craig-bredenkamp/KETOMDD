@@ -6,58 +6,6 @@
     <title>Progress Bar</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-        #progress-container {
-            width: 100%;
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        #progress-bar {
-            width: 100%;
-            height: 20px;
-            border-radius: 10px;
-            overflow: hidden;
-            -webkit-appearance: none;
-            appearance: none;
-            background-color: #e0e0e0;
-        }
-        #progress-bar::-webkit-progress-bar {
-            background-color: #e0e0e0;
-            border-radius: 10px;
-        }
-        #progress-bar::-webkit-progress-value {
-            background-color: #3b82f6; /* Primary color */
-            transition: width 0.2s ease-in-out;
-        }
-        #progress-bar::-moz-progress-bar {
-            background-color: #3b82f6; /* Primary color */
-            transition: width 0.2s ease-in-out;
-        }
-        .hide-checklist #checklist {
-            display: none; /* Hide the checklist on the main page */
-        }
-        #checklist {
-            list-style-type: none; /* Remove bullet points */
-            padding: 0; /* Remove default padding */
-        }
-        #checklist li {
-            margin: 10px 0; /* Optional: add some margin between items */
-        }
-    </style>
 </head>
 <body class="hide-checklist">
     <div id="progress-container">
