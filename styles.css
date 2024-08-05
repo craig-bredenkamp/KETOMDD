@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -31,15 +31,15 @@ body {
     border-radius: 10px;
 }
 #progress-bar::-webkit-progress-value {
-    background-color: #3b82f6; /* Primary color */
+    background-color: #000000; /* Primary color */
     transition: width 0.2s ease-in-out;
 }
 #progress-bar::-moz-progress-bar {
-    background-color: #3b82f6; /* Primary color */
+    background-color: #000000; /* Primary color */
     transition: width 0.2s ease-in-out;
 }
 #checklist {
-    display: none; /* Hide the checklist */
+    display: box; /* Hide the checklist */
     list-style-type: none; /* Remove bullet points */
     padding: 0; /* Remove default padding */
 }
