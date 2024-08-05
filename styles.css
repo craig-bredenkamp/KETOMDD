@@ -13,7 +13,7 @@
     :root {
       --bg-color: #1a1a1a;
       --container-bg: #2c2c2c;
-      --text-color: #fff;
+      --text-color: #000000;
       --progress-bg: #444;
       --progress-fill: #ffffff;
       --shadow-color: rgba(255, 255, 255, 0.1);
