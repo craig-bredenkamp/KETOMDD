@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #progress-container {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        #progress-bar {
+            width: 100%;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: #e0e0e0;
+        }
+        #progress-bar::-webkit-progress-bar {
+            background-color: #e0e0e0;
+            border-radius: 10px;
+        }
+        #progress-bar::-webkit-progress-value {
+            background-color: #3b82f6; /* Primary color */
+            transition: width 0.2s ease-in-out;
+        }
+        #progress-bar::-moz-progress-bar {
+            background-color: #3b82f6; /* Primary color */
+            transition: width 0.2s ease-in-out;
+        }
+        #checklist {
+            display: none; /* Hide the checklist */
+            list-style-type: none; /* Remove bullet points */
+            padding: 0; /* Remove default padding */
+        }
+        #checklist li {
+            margin: 10px 0; /* Optional: add some margin between items */
+        }
+    </style>
+</head>
+<body>
+    <div id="progress-container">
+        <progress id="progress-bar" value="0" max="100"></progress>
+        <ul id="checklist">
+            <li><input type="checkbox" onclick="updateProgress()"> Definition of depression</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Epidemiology</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Burden of disease</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Limitations of current treatment approach</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Efficacy of antidepressants</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Aim and objectives</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Methods</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Neurotransmitter imbalance</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Neuroinflammation</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Gut dysbiosis</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Mitochondrial dysfunction</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Psilocybin</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Dietary patterns and risk of depression</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Ultra processed food</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Meat intake</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Metabolic comorbidities and risk of depression</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Definition of a ketogenic diet</li>
+            <li><input type="checkbox" onclick="updateProgress()"> History of the ketogenic diet</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Other mental disorders</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Aspects of depression treated by a ketogenic diet</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Recent case studies and clinical trials</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Systematic reviews and meta-analysis</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Ongoing and planned clinical trials</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Cardiovascular risk</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Fiber</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Side-effects and contraindications</li>
+            <li><input type="checkbox" onclick="updateProgress()"> The ketogenic diet in an inpatient setting</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Long-term relapse prevention</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Low-income settings</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Conclusion</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Acknowledgements</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Competing interests</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Author contributions</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Funding</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Data availability</li>
+            <li><input type="checkbox" onclick="updateProgress()"> Disclaimer</li>
+        </ul>
+    </div>
+    <script>
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('#checklist input[type="checkbox"]');
+            const total = checkboxes.length;
+            const checked = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
+            const progress = (checked / total) * 100;
+            document.getElementById('progress-bar').value = progress;
+        }
+    </script>
+</body>
+</html>
