@@ -1,14 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded and parsed');
     loadCheckboxes();
     updateProgress();
-    console.log('Page loaded and scripts executed');
+    console.log('Initial progress updated');
 
     const checkboxes = document.querySelectorAll('#checklist input[type="checkbox"]');
-    checkboxes.forEach(checkbox => {
+    checkboxes.forEach((checkbox, index) => {
         checkbox.addEventListener('change', () => {
+            console.log(`Checkbox ${index} changed to ${checkbox.checked}`);
             saveCheckboxes();
             updateProgress();
-            console.log('Checkbox state changed');
         });
     });
 });
@@ -18,7 +19,7 @@ function updateProgress() {
     const total = checkboxes.length;
     const checked = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
     const progress = total > 0 ? (checked / total) * 100 : 0;
-    
+
     console.log(`Total checkboxes: ${total}, Checked: ${checked}, Progress: ${progress}`);
 
     const progressBar = document.getElementById('progress-bar');
@@ -38,7 +39,7 @@ function saveCheckboxes() {
     const checkboxes = document.querySelectorAll('#checklist input[type="checkbox"]');
     const checkboxStates = Array.from(checkboxes).map(checkbox => checkbox.checked);
     localStorage.setItem('checkboxStates', JSON.stringify(checkboxStates));
-    console.log('Checkbox states saved');
+    console.log('Checkbox states saved:', checkboxStates);
 }
 
 function loadCheckboxes() {
@@ -47,5 +48,5 @@ function loadCheckboxes() {
     checkboxes.forEach((checkbox, index) => {
         checkbox.checked = checkboxStates[index] || false;
     });
-    console.log('Checkbox states loaded');
+    console.log('Checkbox states loaded:', checkboxStates);
 }
