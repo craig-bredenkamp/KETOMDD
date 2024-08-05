@@ -17,7 +17,7 @@ function updateProgress() {
     const checkboxes = document.querySelectorAll('#checklist input[type="checkbox"]');
     const total = checkboxes.length;
     const checked = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
-    const progress = total ? (checked / total) * 100 : 0;
+    const progress = total > 0 ? (checked / total) * 100 : 0;
     console.log(`Total checkboxes: ${total}, Checked: ${checked}, Progress: ${progress}`);
 
     const progressBar = document.getElementById('progress-bar');
