@@ -16,7 +16,11 @@ function updateProgress() {
     const total = checkboxes.length;
     const checked = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
     const progress = (checked / total) * 100;
-    document.getElementById('progress-bar').value = progress;
+    
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) {
+        progressBar.value = progress;
+    }
 }
 
 function saveCheckboxes() {
